@@ -13,18 +13,30 @@ const IndexPage = ({ data }) => (
     <SEO title="Home" keywords={[`joelaa`, `developer`, `joelaa.com`]} />
     
     <div className={frontstyle.aboutMe}>
-      <div key={data.contentfulPerson.contentful_id}>
-        <h3>{data.contentfulPerson.title}</h3>
-        <p>{data.contentfulPerson.shortBio.shortBio}</p>
+      <div key={data.me.contentful_id}>
+        <h3>{data.me.title}</h3>
+        <p>{data.me.shortBio.shortBio}</p>
         <Img
           className={frontstyle.meImage}
-          fluid={data.contentfulPerson.image.fluid} 
-          srcSet={data.contentfulPerson.image.fluid.srcSetWebp}
+          fluid={data.me.image.fluid} 
+          srcSet={data.me.image.fluid.srcSetWebp}
           />
       </div>
     </div>
 
-    <Link to="/page-2/">Go to Page 2</Link>
+    <div className={frontstyle.latestBlogPosts}>
+      <h3>{data.blogposts.edges.totalCount} Posts</h3>
+
+      {data.blogposts.edges.map(({ node }) => (
+        <div key={node.contentful_id} className={frontstyle.blogPost}>
+          <Link to={node.slug}>
+            <h4>{node.title} - {node.publishDate}</h4>
+            <p>{node.description.description}</p>
+          </Link>
+        </div>
+      ))}
+    </div>
+
   </Layout>
 )
 
@@ -32,7 +44,7 @@ export default IndexPage
 
 export const query = graphql`
 query {
-  contentfulPerson(name: { eq: "Joel AA"}) {
+  me: contentfulPerson(name: { eq: "Joel AA"}) {
     contentful_id
     name
     title
@@ -46,6 +58,59 @@ query {
         srcSetWebp
         tracedSVG
         ...GatsbyContentfulFluid_withWebp
+      }
+    }
+  }
+  blogposts: allContentfulBlogPost {
+    edges {
+      node {
+				contentful_id
+        slug
+        title
+        publishDate(formatString: "MMMM DD, YYYY")
+        createdAt
+        updatedAt
+        tags
+        heroImage {
+          id
+          fluid(maxWidth: 700) {
+            srcSetWebp
+          }
+        }
+        author {
+          contentful_id
+          name
+          company
+          title
+          email
+          phone
+          facebook
+          twitter
+          github
+          image {
+            fluid(maxWidth: 200) {
+              srcSetWebp
+            }
+          }
+          avatar {
+            fluid(maxWidth: 200) {
+              srcSetWebp
+            }
+          }
+          shortBio {
+            shortBio
+          }
+        }
+        description {
+          description
+        }
+        body {
+          body
+          internal {
+            type
+            content
+          }
+        }
       }
     }
   }
