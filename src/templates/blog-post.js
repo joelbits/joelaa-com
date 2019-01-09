@@ -8,9 +8,9 @@ export default ({ data }) => {
     return (
         <Layout>
             <h1>{post.title}</h1>
-            <h4>By: {post.autor}</h4>
+            <h4>By: {post.author.name}</h4>
             <h4>Published: {post.publishDate}</h4>
-            <div className={styles.blogPost} dangerouslySetInnerHTML={{ __html: post.body.internal.content}}>
+            <div className={styles.blogPost} dangerouslySetInnerHTML={{ __html: post.body.childMarkdownRemark.html }}>
             </div>
         </Layout>
     )
@@ -33,36 +33,39 @@ export const query = graphql`
             }
             }
             author {
-            contentful_id
-            name
-            company
-            title
-            email
-            phone
-            facebook
-            twitter
-            github
-            image {
-                fluid(maxWidth: 200) {
-                srcSetWebp
+                contentful_id
+                name
+                company
+                title
+                email
+                phone
+                facebook
+                twitter
+                github
+                image {
+                    fluid(maxWidth: 200) {
+                    srcSetWebp
+                    }
                 }
-            }
-            avatar {
-                fluid(maxWidth: 200) {
-                srcSetWebp
+                avatar {
+                    fluid(maxWidth: 200) {
+                    srcSetWebp
+                    }
                 }
-            }
-            shortBio {
-                shortBio
-            }
+                shortBio {
+                    childMarkdownRemark {
+                        html
+                    }
+                }
             }
             description {
-                description
+                childMarkdownRemark {
+                    html
+                }
             }
             body {
-                body
-                internal {
-                    content
+                childMarkdownRemark {
+                    html
                 }
             }
         }

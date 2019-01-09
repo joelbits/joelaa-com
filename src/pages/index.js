@@ -8,37 +8,40 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import frontstyle from '../styles/frontpage.module.sass'
 
-const IndexPage = ({ data }) => (
-  <Layout>
-    <SEO title="Home" keywords={[`joelaa`, `developer`, `joelaa.com`]} />
-    
-    <div className={frontstyle.aboutMe}>
-      <div key={data.me.contentful_id}>
-        <h3>{data.me.title}</h3>
-        <p>{data.me.shortBio.shortBio}</p>
-        <Img
-          className={frontstyle.meImage}
-          fluid={data.me.image.fluid} 
-          srcSet={data.me.image.fluid.srcSetWebp}
-          />
-      </div>
-    </div>
-
-    <div className={frontstyle.latestBlogPosts}>
-      <h3>{data.blogposts.edges.totalCount} Posts</h3>
-
-      {data.blogposts.edges.map(({ node }) => (
-        <div key={node.contentful_id} className={frontstyle.blogPost}>
-          <Link to={node.slug}>
-            <h4>{node.title} - {node.publishDate}</h4>
-            <p>{node.description.description}</p>
-          </Link>
+const IndexPage = ({ data }) => {
+  const { me, blogposts } = data
+  return (
+    <Layout>
+      <SEO title="Home" keywords={[`joelaa`, `developer`, `joelaa.com`]} />
+      
+      <div className={frontstyle.aboutMe}>
+        <div key={me.contentful_id}>
+          <h3>{me.title}</h3>
+          <p>{me.shortBio.shortBio}</p>
+          <Img
+            className={frontstyle.meImage}
+            fluid={me.image.fluid} 
+            srcSet={me.image.fluid.srcSetWebp}
+            />
         </div>
-      ))}
-    </div>
+      </div>
 
-  </Layout>
-)
+      <div className={frontstyle.latestBlogPosts}>
+        <h3>{blogposts.edges.totalCount} Posts</h3>
+
+        {blogposts.edges.map(({ node }) => (
+          <div key={node.contentful_id} className={frontstyle.blogPost}>
+            <Link to={node.slug}>
+              <h4>{node.title} - {node.publishDate}</h4>
+              <p>{node.body.childMarkdownRemark.excerpt}</p>
+            </Link>
+          </div>
+        ))}
+      </div>
+
+    </Layout>
+  )
+}
 
 export default IndexPage
 
@@ -52,6 +55,9 @@ query {
     github
     shortBio {
       shortBio
+      childMarkdownRemark {
+        html
+      }
     }
     image {
       fluid(maxWidth: 700) {
@@ -98,17 +104,21 @@ query {
             }
           }
           shortBio {
-            shortBio
+            childMarkdownRemark {
+              html
+            }
           }
         }
         description {
-          description
+          childMarkdownRemark {
+            excerpt
+            html
+          }
         }
         body {
-          body
-          internal {
-            type
-            content
+          childMarkdownRemark {
+            html
+            excerpt
           }
         }
       }
