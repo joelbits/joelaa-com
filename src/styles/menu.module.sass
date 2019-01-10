@@ -7,24 +7,125 @@
     width: 100%
     padding: 1em
     transition: all ease-in-out 0.5s
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: center
+    .navBarLogoWrap
+        width: 100%
+        padding: 1em
+        margin: 0
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        svg
+            display: none
+            color: #F2994A
+            font-size: 2.5em
+        a
+            width: 100%
+            text-align: left
+            h1
+                width: 100%
+                white-space: nowrap
+                font-size: 1em
+                float: left
+                margin: 0
+                font-family: 'Rochester', cursive
+                font-weight: 500
+                font-size: 36px
+                color: #F2994A
+                transition: text-shadow ease-out 1s
+                &:hover
+                    text-shadow: 0.1em 0.1em 0.1em hsla(255,255,255,0.42)
+                    transition: text-shadow ease-in 0.2s
+.navBarMobile
+    font-size: 0.7em
+    background: transparent
+    color: white
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 99999
+    width: 100%
+    padding: 1em
+    //margin: 1em 0.25em
+    transition: all ease-in-out 0.5s
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    .navBarLogoWrap
+        width: 100%
+        padding: 1em
+        margin: 0
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        svg
+            color: #F2994A
+            font-size: 2.5em
+            &:hover
+                //text-shadow: 0.1em 0.1em 0.1em hsla(255,255,255,0.42)
+                box-shadow: 0.15em 0.25em 0.5em 1px hsla(255,255,255,0.42)
+                transition: text-shadow ease-in 0.2s
+        a
+            width: 100%
+            text-align: center
+            h1
+                width: 100%
+                font-size: 1em
+                float: left
+                margin: 0
+                white-space: nowrap
+                font-family: 'Rochester', cursive
+                font-weight: 500
+                font-size: 36px
+                color: #F2994A
+                transition: text-shadow ease-out 1s
+                &:hover
+                    text-shadow: 0.1em 0.1em 0.1em hsla(255,255,255,0.42)
+                    transition: text-shadow ease-in 0.2s
+    .menuList
+        background: transparent
+        border: 0.1px solid black
+        margin: 0.25em
+        padding: 0.25em
+        display: block
+        //display: none
+        font-family: 'Open Sans'
+        font-size: 1.5em
+        width: 100%
+        text-align: center
+        background: hsla(5,5,5,0.82)
+        li
+            display: block
+            background: hsla(5,5,5,0.62)
+            border-radius: 0.5em
+            margin: 0.5em 0
+            padding: 1em
+            a, a:visited, a:active
+                text-decoration: none
+                color: #fefefe
+                transition: all ease-in 0.2s
+                &:hover
+                    color: hsla(255,255,255,0.42)
+                    transition: all ease-in 0.2s
+                    text-decoration: underline
+                color: #fefefe
+                transition: all ease-in 0.2s
+                &:hover
+                    color: hsla(255,255,255,0.42)
+                    transition: all ease-in 0.2s
+                    text-decoration: underline
 .docked
     //background: hsla(0,0,0,0.82)
-    background: green
+    background: purple
     z-index: 999
     transition: all ease-in-out 0.5s
-.appLogo
-    font-size: 1em
-    display: inline
-    float: left
-    margin: 0
-    font-family: 'Rochester', cursive
-    font-weight: 500
-    font-size: 36px
-    color: #F2994A
-    transition: text-shadow ease-out 1s
-    &:hover
-        text-shadow: 0.1em 0.1em 0.1em hsla(255,255,255,0.42)
-        transition: text-shadow ease-in 0.2s
+.hidden
+    display: none
+    color: red
 .menuList
     margin: 0
     padding: 0.25em
@@ -32,7 +133,8 @@
     align-items: center
     justify-content: flex-end
     font-family: 'Open Sans'
-    font-size: 1.25em
+    font-size: 1.5em
+    flex: 9
     li
         display: inline
         margin: 0 1em
@@ -44,11 +146,24 @@
                 color: hsla(255,255,255,0.42)
                 transition: all ease-in 0.2s
                 text-decoration: underline
+            color: #fefefe
+            transition: all ease-in 0.2s
+            &:hover
+                color: hsla(255,255,255,0.42)
+                transition: all ease-in 0.2s
+                text-decoration: underline
+
+.githubLink
+    display: flex
+    padding: 1px
+    align-content: center
+    justify-items: center
 .githubLogo
-    font-size: 2em
+    font-size: 2.5em
     color: #fefefe
-    margin-left: 0.75em
+    transition: color ease-in 0.4s
     &:hover
         color: black
         background: #fefefe
         border-radius: 0.5em
+        transition: color background ease-in 0.4s
