@@ -6,25 +6,22 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 // import Image from '../components/image'
 import SEO from '../components/seo'
+import Education from '../components/education'
+import Experience from '../components/experience'
+import Portfolio from '../components/portfolio'
+import Skills from '../components/skills'
 import frontstyle from '../styles/frontpage.module.sass'
 
 const IndexPage = ({ data }) => {
-  const { me, blogposts } = data
+  const { me, blogposts, education, resume } = data
   return (
     <Layout>
       <SEO title="Home" keywords={[`joelaa`, `developer`, `joelaa.com`]} />
-      
-      <div className={frontstyle.aboutMe}>
-        <div key={me.contentful_id}>
-          <h3>{me.title}</h3>
-          <p>{me.shortBio.shortBio}</p>
-          <Img
-            className={frontstyle.meImage}
-            fluid={me.image.fluid} 
-            srcSet={me.image.fluid.srcSetWebp}
-            />
-        </div>
-      </div>
+
+      <Skills data={resume.resumeData.skills} />
+      <Education data={resume.resumeData.education} />
+      <Experience data={resume.resumeData.work} />
+      <Portfolio data={resume.resumeData.publications} />
 
       <div className={frontstyle.latestBlogPosts}>
         <h3>{blogposts.edges.totalCount} Posts</h3>
@@ -121,6 +118,68 @@ query {
             excerpt
           }
         }
+      }
+    }
+  }
+  education: contentfulResumeInfo(contentful_id: { eq: "5miYodu4o0WkCC4woI4K0Y" }) {
+    resumeData {
+        education {
+            gpa
+            area
+            courses
+            startDate
+            endDate
+            studyType
+            institution
+        }
+    }
+  }
+  resume:  contentfulResumeInfo(contentful_id: { eq: "5miYodu4o0WkCC4woI4K0Y" }) {
+    resumeData {
+      education {
+        gpa
+        area
+        courses
+        startDate
+        endDate
+        studyType
+        institution
+      }
+      work {
+        startDate
+        endDate
+        company
+        position
+        website
+        summary
+        highlights
+      }
+      skills {
+        name
+        level
+        keywords
+        logos {
+          AWS
+          CSS
+          HTML
+          Java
+          Linux
+          Docker
+          NodeJs
+          Python
+          Android
+          Jenkins
+          ReactJs
+          Javascript
+        }
+      }
+      publications {
+        name
+        image
+        summary
+        website
+        publisher
+        releaseDate
       }
     }
   }

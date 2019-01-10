@@ -3,6 +3,9 @@ import { Link } from 'gatsby'
 import { FaGithub, FaBars } from 'react-icons/fa'
 import styleable from 'react-styleable'
 import styles from '../styles/menu.module.sass'
+import classNames from 'classnames/bind'
+
+let timer;
 
 class Menu extends React.Component {
 
@@ -11,6 +14,8 @@ class Menu extends React.Component {
     this.state = {
       width: 1980,
       height: 1024,
+      wait: false,
+      scrollPos: 0,
     }
     this.isMobile = this.isMobile.bind(this);
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
@@ -21,39 +26,65 @@ class Menu extends React.Component {
     return res
   }
 
+  shouldDock() {
+    const res = (this.state.scrollPos > 50);
+    if (res) {
+      console.log(`Menu should DOCK! (scrolled >50 px)`)
+    }
+    return res;
+  }
+
   toggleClass(el, className) {
     console.log(`Toggling classname: ${className} for el: ${el}`);
     const menuElement = document.querySelector(el)
     menuElement.classList.toggle(className)
+    this.forceUpdate();
   }
 
   toggleMenu() {
     const menuElement = document.querySelector('#menuList')
-    if (menuElement.style.display !== 'none')
-      menuElement.style.display = 'none';
-    else
+    console.log(menuElement.style.display)
+    if (menuElement.style.display === 'none')
       menuElement.style.display = 'block';
+    else
+      menuElement.style.display = 'none';
   }
 
   updateWindowDimensions() {
-    new Promise(() => setTimeout(() => {
-      this.setState({ width: window.innerWidth, height: window.innerHeight })
-    }, 500))
+    if (timer) {
+      window.clearTimeout(timer)
+    }
+    timer = window.setTimeout(() => {
+      this.setState({ 
+        width: window.innerWidth,
+        height: window.innerHeight,
+        scrollPos: window.scrollY,
+        wait: false,
+      })
+    }, 50)
   }
 
   componentDidMount() {
     this.updateWindowDimensions()
     window.addEventListener('resize', this.updateWindowDimensions)
+    window.addEventListener('scroll', this.updateWindowDimensions)
   }
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.updateWindowDimensions)
+    window.removeEventListener('scroll', this.updateWindowDimensions)
   }
 
   render() {
     const { css, siteSections, siteTitle } = this.props;
+    let cx = classNames.bind(css);
+    let className = cx({
+      navBarMobile: this.isMobile(),
+      navBar: !this.isMobile(),
+      docked: this.shouldDock(),
+    })
     return (
-      <nav className={this.isMobile() ? css.navBarMobile : css.navBar}>
+      <nav className={className}>
         <div className={css.navBarLogoWrap}>
           <FaBars id="#menuBars" onClick={this.toggleMenu} />
           <Link to="/">

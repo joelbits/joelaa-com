@@ -1,0 +1,48 @@
+.appEducation
+    width: 100%
+    font-size: 1.25em
+    text-align: center
+    background: hsla(90, 90, 90, 0.6)
+    display: flex
+    min-height: 100vh
+    flex-direction: column
+    justify-content: center
+    align-content: center
+    .work
+        outline: 1px solid black
+        width: 75%
+        margin: 0 auto 1.5em
+        padding: 1em
+    h2
+        margin: 4em auto
+        font-weight: 600
+    span:nth-child(1)
+        display: inline
+        &::after
+            content: ' - '
+    span:nth-child(2)
+        display: inline
+    span
+        display: block
+    .institution
+        font-weight: 600
+    .area
+        margin-right: 0.25em
+    .studyType, .area
+        display: inline-block
+        font-size: 1.25em
+        font-weight: 600
+        margin-bottom: 1em
+    .area::after
+        content: ', '
+    .education
+        margin-bottom: 5em
+        .dates
+            span
+                display: inline
+                font-style: italic
+                font-size: 0.75em
+    .educationIcon
+        font-size: 2.5em
+        position: absolute
+        right: 1.5em

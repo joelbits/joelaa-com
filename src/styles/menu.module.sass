@@ -43,7 +43,7 @@
     font-size: 0.7em
     background: transparent
     color: white
-    position: absolute
+    position: fixed
     top: 0
     left: 0
     z-index: 99999
@@ -91,8 +91,8 @@
         border: 0.1px solid black
         margin: 0.25em
         padding: 0.25em
-        display: block
-        //display: none
+        //display: block
+        display: none
         font-family: 'Open Sans'
         font-size: 1.5em
         width: 100%
@@ -119,10 +119,10 @@
                     transition: all ease-in 0.2s
                     text-decoration: underline
 .docked
-    //background: hsla(0,0,0,0.82)
-    background: purple
+    background: hsla(0,0,0,0.82)
     z-index: 999
     transition: all ease-in-out 0.5s
+    position: fixed
 .hidden
     display: none
     color: red
