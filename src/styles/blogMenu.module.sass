@@ -16,7 +16,7 @@
     font-size: 1.66em
     display: inline
     float: left
-    margin: 1em 0.5em
+    margin: 0
     font-family: 'Rochester', cursive
     font-weight: 500
     font-size: 36px
@@ -27,19 +27,25 @@
         transition: text-shadow ease-in 0.2s
     &:after
         content: ' Blog'
-ul
-    margin: 1em 1em
-    padding: 0
+.menuList
+    margin: 0
+    padding: 0.25em
     display: flex
-    float: right
+    align-items: center
+    justify-content: flex-end
+    font-family: 'Open Sans'
+    font-size: 1.25em
     li
         display: inline
         margin: 0 1em
         a, a:visited, a:active
+            text-decoration: none
             color: #fefefe
-            transition: text-shadow ease-in-out 1s
+            transition: all ease-in 0.2s
             &:hover
                 color: hsla(255,255,255,0.42)
+                transition: all ease-in 0.2s
+                text-decoration: underline
 .githubLogo
     font-size: 2em
     color: #fefefe

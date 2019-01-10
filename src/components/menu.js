@@ -8,7 +8,7 @@ function Menu({ siteSections, siteTitle, css }) {
   return (
     <nav className={css.navBar}>
       <Link to="/"><h1 className={css.appLogo}>{siteTitle}</h1></Link>
-      <ul>
+      <ul className={css.menuList}>
         {siteSections.edges.map(edge => {
             const node = edge.node;
           if (node.name === 'Skills') {
