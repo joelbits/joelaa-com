@@ -5,11 +5,14 @@ import { StaticQuery, graphql } from 'gatsby'
 import Menu from './menu'
 import Header from './header'
 import './layout.css'
+import cssBlogMenu from '../styles/blogMenu.module.sass'
+import cssBlogHeader from '../styles/blogHeader.module.sass'
 
-const Layout = ({ children, css }) => (
+
+const BlogLayout = ({ children }) => (
   <StaticQuery
     query={graphql`
-      query SiteInfosQuery {
+      query BlogSiteInfosQuery {
         siteInfo: site {
           siteMetadata {
             title
@@ -25,12 +28,16 @@ const Layout = ({ children, css }) => (
       }
     `}
     render={data => (
-      <>
+      <div className={cssBlogMenu.blogPage}>
         <Menu
           siteTitle={data.siteInfo.siteMetadata.title} 
           siteSections={data.siteSections}
+          css={cssBlogMenu}
         />
-        <Header siteTitle={data.siteInfo.siteMetadata.title} />
+        <Header 
+          siteTitle={data.siteInfo.siteMetadata.title}
+          css={cssBlogHeader}
+        />
         <div
           style={{
             margin: `0 auto`,
@@ -44,13 +51,13 @@ const Layout = ({ children, css }) => (
             © {new Date().getFullYear()} Joelaa.com
           </footer>
         </div>
-      </>
+      </div>
     )}
   />
 )
 
-Layout.propTypes = {
+BlogLayout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout
+export default BlogLayout

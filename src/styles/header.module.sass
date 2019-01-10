@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600|Rochester')
+
+.appHeader
+  background: hsla(5,5,5,0.55)
+  text-align: center
+  padding: 0
+  margin: 0
+.hero
+  align-items: center
+  color: #fefefe
+  display: flex
+  flex-direction: column
+  justify-content: center
+  min-height: 100vh
+  background: #282c34 url('../images/bg.svg') no-repeat center fixed
+  background-size: cover
+.appTitles
+  opacity: 0.82
+  width: 20em
+  margin-bottom: 0.75em
+.subTitle
+  font-size: 1.5em
+  line-height: 1.25em
+.mainTitle
+  font-weight: 600
+  font-size: calc(40px + 2vmin)
+  display: flex
+  justify-content: center
+  align-items: center
+  svg
+    margin-right: 0.33em
+    color: greenyellow
+    opacity: 0.5
+.btnContactMe
+  background: transparent
+  color: #fefefe
+  font-weight: 600
+  border: none
+  outline: solid 0.1em #fefefe
+  transition: all ease-in 1s
+  &:hover
+    color: black
+    transition: all ease-in 0.1s
+    background: hsla(255, 255, 255, 0.82)
+    outline: solid 0.1em hsla(255, 255, 255, 0.82)
+    border-radius: 0
+.downArrow
+  position: absolute
+  text-align: center
+  bottom: 1em
+  opacity: 0.82
+  filter: brightness(84%)
+  transition: filter ease-in 0.5s
+  &:hover
+    filter: brightness(100%)
+    transition: filter ease-in 0.1s

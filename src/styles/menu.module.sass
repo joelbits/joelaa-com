@@ -1,0 +1,46 @@
+.navBar
+    background: transparent
+    color: white
+    position: fixed
+    height: 15vh
+    width: 100%
+    padding: 1em
+    transition: all ease-in-out 0.5s
+.docked
+    //background: hsla(0,0,0,0.82)
+    background: green
+    z-index: 999
+    transition: all ease-in-out 0.5s
+.appLogo
+    font-size: 1em
+    display: inline
+    float: left
+    margin: 1em 0.5em
+    font-family: 'Rochester', cursive
+    color: #F2994A
+    transition: text-shadow ease-out 1s
+    &:hover
+        text-shadow: 0.1em 0.1em 0.1em hsla(255,255,255,0.42)
+        transition: text-shadow ease-in 0.2s
+ul
+    margin: 1em 1em
+    padding: 0
+    display: flex
+    float: right
+    li
+        display: inline
+        margin: 0 1em
+        font-size: 1.25em
+        a, a:visited, a:active
+            color: #fefefe
+            transition: text-shadow ease-in-out 1s
+            &:hover
+                color: hsla(255,255,255,0.42)
+.githubLogo
+    font-size: 2em
+    color: #fefefe
+    margin-left: 0.75em
+    &:hover
+        color: black
+        background: #fefefe
+        border-radius: 0.5em

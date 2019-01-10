@@ -1,18 +1,18 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Layout from '../components/layout'
-import styles from '../styles/blogpost.module.sass'
+import BlogLayout from '../components/bloglayout'
+import styles from '../styles/blog.module.sass'
 
 export default ({ data }) => {
     const post = data.contentfulBlogPost
     return (
-        <Layout>
+        <BlogLayout>
             <h1>{post.title}</h1>
             <h4>By: {post.author.name}</h4>
             <h4>Published: {post.publishDate}</h4>
-            <div className={styles.blogPost} dangerouslySetInnerHTML={{ __html: post.body.childMarkdownRemark.html }}>
+            <div className={styles.blogPostContent} dangerouslySetInnerHTML={{ __html: post.body.childMarkdownRemark.html }}>
             </div>
-        </Layout>
+        </BlogLayout>
     )
 }
 

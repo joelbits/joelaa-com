@@ -1,35 +1,31 @@
-import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
+import { FaArrowDown } from 'react-icons/fa'
+import styleable from 'react-styleable'
+import styles from '../styles/header.module.sass'
 
-const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </div>
-)
+const Header = ({ siteTitle, css }) => {
+  const scrollDown = () => {
+    window.scrollTo(0, document.body.scrollHeight);
+  };
+  
+  return (
+    <React.Fragment>
+      <header className={css.appHeader}>
+        <div className={css.hero}>
+          <section className={css.appTitles}>
+            <p className={css.subTitle}>Swedish Computer Science Student, Web & Software</p>
+            <p className={css.mainTitle}>
+              {'DEVELOPER.'}
+            </p>
+            <button className={css.btnContactMe} title="Available for hire and projects!">CONTACT ME</button>
+          </section>
+        </div>
+        <FaArrowDown className={css.downArrow} alt="Scroll down" onClick={scrollDown} title="Scroll to bottom"/>
+      </header>
+    </React.Fragment>
+  )
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
@@ -39,4 +35,4 @@ Header.defaultProps = {
   siteTitle: ``,
 }
 
-export default Header
+export default styleable(styles)(Header)

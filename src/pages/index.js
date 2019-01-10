@@ -67,7 +67,7 @@ query {
       }
     }
   }
-  blogposts: allContentfulBlogPost {
+  blogposts: allContentfulBlogPost(limit: 3, sort: { fields: publishDate, order: DESC }) {
     edges {
       node {
 				contentful_id
