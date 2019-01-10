@@ -1,8 +1,9 @@
 .appEducation
     width: 100%
-    font-size: 1.25em
+    font-size: 1em
     text-align: center
     background: hsla(90, 90, 90, 0.6)
+    font-family: 'Open Sans'
     display: flex
     min-height: 100vh
     flex-direction: column
@@ -24,13 +25,11 @@
         display: inline
     span
         display: block
-    .institution
-        font-weight: 600
     .area
         margin-right: 0.25em
     .studyType, .area
         display: inline-block
-        font-size: 1.25em
+        font-size: 1em
         font-weight: 600
         margin-bottom: 1em
     .area::after
@@ -42,6 +41,14 @@
                 display: inline
                 font-style: italic
                 font-size: 0.75em
+        .institution
+            font-size: 0.75em
+            font-weight: 600
+            display: block
+        li.course
+            font-size: 0.5em
+            line-height: 1.25em
+            margin: 0.25em
     .educationIcon
         font-size: 2.5em
         position: absolute

@@ -31,7 +31,8 @@ const Layout = ({ children, css }) => (
           siteSections={data.siteSections}
         />
         <Header siteTitle={data.siteInfo.siteMetadata.title} />
-        <div
+        <div 
+          className="contentWrapper"
           style={{
             margin: `0 auto`,
             maxWidth: 960,

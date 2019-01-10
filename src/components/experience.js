@@ -1,5 +1,4 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { FaHistory } from 'react-icons/fa';
 import styleable from 'react-styleable';
@@ -10,8 +9,8 @@ function Experience({ data, css }) {
     return (
         <div id="appExperience" className={css.appExperience}>
             <h2>
-            Experience
-            <FaHistory className={css.experienceIcon} />
+                Experience
+                <FaHistory className={css.experienceIcon} />
             </h2>
             {myExperience && myExperience.map(alldata => (
             <div key={alldata.position} className={css.work}>

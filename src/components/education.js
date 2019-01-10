@@ -25,7 +25,11 @@ function Education({ data, css }) {
                 {alldata.institution && <span className={css.institution}>{alldata.institution}</span>}
                 {alldata.area && <span className={css.area}>{alldata.area}</span>}
                 {alldata.studyType && <span className={css.studyType}>{alldata.studyType}</span>}
-                {alldata.courses && alldata.courses.map(course => <span className={css.course} key={course}>{course}</span>)}
+                {alldata.courses && (
+                    <ul>
+                        {alldata.courses.map((course) => <li className={css.course} key={course}>{course}</li>)}
+                    </ul>
+                )}
             </div>
         ))}
         </div>
