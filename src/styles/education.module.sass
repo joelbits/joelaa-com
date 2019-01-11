@@ -9,6 +9,7 @@
     flex-direction: column
     justify-content: center
     align-content: center
+    padding-bottom: 5em
     h2
         margin: 4em auto
         font-weight: 600
@@ -23,14 +24,19 @@
     .area
         margin-right: 0.25em
     .studyType, .area
-        display: inline-block
+        display: block
         font-size: 1em
         font-weight: 600
         margin-bottom: 0.5em
     .area::after
         content: ', '
     .education
-        margin-bottom: 5em
+        max-width: 900px
+        margin: 0 auto 5em auto
+        padding: 5em 5em
+        outline: solid 1px lightgray
+        //filter: drop-shadow(3px 3px 3px hsla(5,5,5,0.3))
+        box-shadow: 3px 3px 3px hsla(5,5,5,0.3)
         .dates
             span
                 display: inline

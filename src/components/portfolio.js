@@ -12,22 +12,25 @@ function Portfolio({ data, css }) {
             {'Portfolio '}
             <FaBriefcase className={css.portfolioIcon} />
         </h2>
-        {data && data.map(alldata => (
-            <div key={alldata.name + alldata.releaseDate} className={css.publication}>
-            {(alldata.image && alldata.website) && <a href={alldata.website} title="See Project Site"><img alt="Project Thumbnail" src={alldata.image} /></a>}
-            {(alldata.startDate || alldata.endDate) && (
-                <div className={css.dates}>
-                <span>{alldata.startDate}</span>
-                <span>{alldata.endDate}</span>
+
+        <div className={css.publicationList}>
+            {data && data.map(alldata => (
+                <div key={alldata.name + alldata.releaseDate} className={css.publication}>
+                    {(alldata.image && alldata.website) && <a href={alldata.website} title="See Project Site"><img alt="Project Thumbnail" src={alldata.image} /></a>}
+                    {(alldata.startDate || alldata.endDate) && (
+                        <div className={css.dates}>
+                            <span>{alldata.startDate}</span>
+                            <span>{alldata.endDate}</span>
+                        </div>
+                    )}
+                    {alldata.publisher && <span className={css.publisher}>{alldata.publisher}</span>}
+                    {alldata.name && <span className={css.name}>{alldata.name}</span>}
+                    {alldata.releaseDate && <span className={css.releaseDate}>{alldata.releaseDate}</span>}
+                    {alldata.website && <span className={css.website}><a href={alldata.website}>{alldata.website}</a></span>}
+                    {alldata.summary && <span className={css.summary}>{alldata.summary}</span>}
                 </div>
-            )}
-        {alldata.publisher && <span className={css.publisher}>{alldata.publisher}</span>}
-        {alldata.name && <span className={css.name}>{alldata.name}</span>}
-        {alldata.releaseDate && <span className={css.releaseDate}>{alldata.releaseDate}</span>}
-        {alldata.website && <span className={css.website}><a href={alldata.website}>{alldata.website}</a></span>}
-        {alldata.summary && <span className={css.summary}>{alldata.summary}</span>}
+            ))}
         </div>
-    ))}
     </div>
   );
 }
