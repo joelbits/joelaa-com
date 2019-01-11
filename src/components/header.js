@@ -21,8 +21,8 @@ const Header = ({ siteTitle, css }) => {
             <button className={css.btnContactMe} title="Available for hire and projects!">CONTACT ME</button>
           </section>
         </div>
-        <FaArrowDown className={css.downArrow} alt="Scroll down" onClick={scrollDown} title="Scroll to bottom"/>
       </header>
+      <FaArrowDown className={css.downArrow} alt="Scroll down" onClick={scrollDown} title="Scroll to bottom"/>
     </React.Fragment>
   )
 }
