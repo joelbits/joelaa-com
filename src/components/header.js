@@ -18,7 +18,7 @@ const Header = ({ siteTitle, css }) => {
             <p className={css.mainTitle}>
               {'DEVELOPER.'}
             </p>
-            <button className={css.btnContactMe} title="Available for hire and projects!">CONTACT ME</button>
+            <button className={css.btnContactMe} title="Available for hire and projects!" onClick={scrollDown}>CONTACT ME</button>
           </section>
         </div>
       </header>
