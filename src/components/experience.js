@@ -7,7 +7,7 @@ import styles from '../styles/experience.module.sass';
 function Experience({ data, css }) {
     const myExperience = data;
     return (
-        <div id="appExperience" className={css.appExperience}>
+        <div id="experience" className={css.appExperience}>
             <h2>
                 Experience
                 <FaHistory className={css.experienceIcon} />

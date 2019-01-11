@@ -8,7 +8,7 @@ import styles from '../styles/education.module.sass';
 function Education({ data, css }) {
     const myEducation = data;
     return (
-        <div id="appEducation" className={css.appEducation}>
+        <div id="education" className={css.appEducation}>
             <h2>
                 Education
                 <FaUniversity className={css.educationIcon}/>

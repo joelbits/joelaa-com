@@ -65,6 +65,7 @@ class Menu extends React.Component {
   }
 
   componentDidMount() {
+    console.log(this.props.siteSections)
     this.updateWindowDimensions()
     window.addEventListener('resize', this.updateWindowDimensions)
     window.addEventListener('scroll', this.updateWindowDimensions)
@@ -93,44 +94,9 @@ class Menu extends React.Component {
         </div>
         <ul className={css.menuList} id="menuList">
           {siteSections.edges.map(edge => {
-              const node = edge.node;
-            if (node.name === 'Skills') {
-              return (
-                <li key={node.name}>
-                  <Link to="#appSkills">
-                      {node.name}
-                  </Link>
-                </li>
-              );
-            }
-            if (node.name === 'Experience') {
-              return (
-                <li key={node.name}>
-                  <Link to="#appExperience">
-                    {node.name}
-                  </Link>
-                </li>
-              );
-            }
-            if (node.name === 'Education') {
-              return (
-                <li key={node.name}>
-                  <Link to="#appEducation">
-                    {node.name}
-                  </Link>
-                </li>
-              );
-            }
-            if (node.name === 'Portfolio') {
-              return (
-                <li key={node}>
-                  <Link to="#appPortfolio">
-                    {node.name}
-                  </Link>
-                </li>
-              );
-            }
-            return <li key={node.name}><Link to={node.name}>{node.name}</Link></li>;
+            const node = edge.node;
+            if (node.name === 'Blog') return <li key={node.name}><Link to={node.name.toLowerCase()}>{node.name}</Link></li>;
+            return <li key={node.name}><Link to={`#${node.name.toLowerCase()}`}>{node.name}</Link></li>;
           })
           }
           <li>

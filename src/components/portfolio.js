@@ -7,7 +7,7 @@ import styles from '../styles/portfolio.module.sass'
 
 function Portfolio({ data, css }) {
   return (
-    <div id="appPortfolio" className={css.appPortfolio}>
+    <div id="portfolio" className={css.appPortfolio}>
         <h2>
             {'Portfolio '}
             <FaBriefcase className={css.portfolioIcon} />

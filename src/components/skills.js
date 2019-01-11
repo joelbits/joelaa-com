@@ -8,7 +8,7 @@ import styles from '../styles/skills.module.sass'
 function Skills({ data, css }) {
     const skillsData = data;
     return (
-        <div id="appSkills" className={css.appSkills}>
+        <div id="skills" className={css.appSkills}>
             <h2>
                 Skills
             </h2>
