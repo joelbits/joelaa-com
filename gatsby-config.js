@@ -42,6 +42,14 @@ module.exports = {
         spaceId: `9j3tdrfq8k7p`,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `open sans\:300,400,400i,600`
+        ]
+      }
+    },
   ],
 }

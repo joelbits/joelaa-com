@@ -1,43 +1,54 @@
 .appExperience
-    background: lightgray
-    font-size: 1em
-    //background: hsla(180, 180, 180, 0.2)
+    font-size: 1.25em
+    background: hsla(180, 180, 180, 0.2)
+    font-family: 'Open Sans'
     min-height: 100vh
     width: 100%
-    padding: 2em 0 8em
-    //display: flex
+    padding: 2em 0
     align-items: center
     justify-content: center
     text-align: center
     h2
-        margin: 2.5em auto
+        margin: 4em auto
         font-weight: 600
-    span:first-child
-        display: inline
-        &::after
-            content: ' - '
-    span
-        display: block
-    .position
-        font-weight: 600
-        font-size: 1.25em
-    .company
-        font-size: 1em
-        margin-bottom: 1em
-    .summary
-        width: 75%
-        margin: 0 auto
-        text-align: left
     .work
-        outline: 1px solid black
-        width: 75%
-        margin: 0 auto 1.5em
-        padding: 1em
-    .dates 
-        span
+        border-radius: 0.2em
+        border-top: 1px solid darkgray
+        border-bottom: 1px solid darkgray
+        border-left: 1px solid lightgray
+        border-right: 1px solid lightgray
+        max-width: 900px
+        margin: 5em auto
+        padding: 5em 5em
+        span:first-child
             display: inline
-            font-style: italic
-            font-size: 0.82em
+            &::after
+                content: ' - '
+        span
+            display: block
+        .position
+            display: inline-block
+            font-size: 1em
+            font-weight: 600
+            margin: 0.5em 0
+        .company
+            display: block
+            font-size: 1em
+            font-weight: 600
+            margin-bottom: 1em
+            a, a:active
+                color: black
+                &:hover
+                    color: lightgray
+        .summary
+            margin: 0 auto
+            text-align: left
+            font-weight: 300
+        .dates 
+            span
+                display: inline
+                font-style: italic
+                font-size: 1em
     .experienceIcon
         font-size: 2.5em
         position: absolute

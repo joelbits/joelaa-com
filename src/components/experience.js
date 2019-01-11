@@ -15,7 +15,7 @@ function Experience({ data, css }) {
             {myExperience && myExperience.map(alldata => (
             <div key={alldata.position} className={css.work}>
                 {(alldata.startDate || alldata.endDate) && <div className={css.dates}><span>{alldata.startDate}</span><span>{alldata.endDate}</span></div>}
-                {alldata.position && <span className="position">{alldata.position}</span>}
+                {alldata.position && <span className={css.position}>{alldata.position}</span>}
                 {alldata.company && alldata.website
                 && <span className={css.company}><a href={alldata.website}>{alldata.company}</a></span>}
                 {alldata.summary && <span className={css.summary}>{alldata.summary}</span>}

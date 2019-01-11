@@ -1,6 +1,6 @@
 .appEducation
     width: 100%
-    font-size: 1em
+    font-size: 1.25em
     text-align: center
     background: hsla(90, 90, 90, 0.6)
     font-family: 'Open Sans'
@@ -9,11 +9,6 @@
     flex-direction: column
     justify-content: center
     align-content: center
-    .work
-        outline: 1px solid black
-        width: 75%
-        margin: 0 auto 1.5em
-        padding: 1em
     h2
         margin: 4em auto
         font-weight: 600
@@ -31,7 +26,7 @@
         display: inline-block
         font-size: 1em
         font-weight: 600
-        margin-bottom: 1em
+        margin-bottom: 0.5em
     .area::after
         content: ', '
     .education
@@ -40,15 +35,20 @@
             span
                 display: inline
                 font-style: italic
-                font-size: 0.75em
+                font-size: 1em
         .institution
-            font-size: 0.75em
-            font-weight: 600
+            font-size: 1em
+            font-weight: 400
             display: block
-        li.course
-            font-size: 0.5em
-            line-height: 1.25em
-            margin: 0.25em
+            margin: 0.25em auto 1em
+        ul
+            margin: 1em auto
+            max-width: 17em
+            li.course
+                text-align: center
+                font-size: 0.75em
+                line-height: 1em
+                font-weight: 300
     .educationIcon
         font-size: 2.5em
         position: absolute

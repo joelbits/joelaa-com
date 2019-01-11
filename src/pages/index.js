@@ -1,10 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import Img from 'gatsby-image'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
-// import Image from '../components/image'
 import SEO from '../components/seo'
 import Education from '../components/education'
 import Experience from '../components/experience'
@@ -13,7 +11,7 @@ import Skills from '../components/skills'
 import frontstyle from '../styles/frontpage.module.sass'
 
 const IndexPage = ({ data }) => {
-  const { me, blogposts, education, resume } = data
+  const { blogposts, resume } = data
   return (
     <Layout>
       <SEO title="Home" keywords={[`joelaa`, `developer`, `joelaa.com`]} />
