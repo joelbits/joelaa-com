@@ -9,10 +9,10 @@ function Education({ data, css }) {
     const myEducation = data;
     return (
         <div id="education" className={css.appEducation}>
-            <h2>
-                Education
-                <FaUniversity className={css.educationIcon}/>
-            </h2>
+            <div className={css.headerWrapper}>
+                <h2>{'Education'}</h2>
+                <FaUniversity className={css.educationIcon} />
+            </div>
 
             {myEducation && myEducation.map(alldata => (
             <div key={alldata.startDate} className={css.education}>

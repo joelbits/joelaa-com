@@ -4,6 +4,7 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import Menu from './menu'
 import Header from './header'
+import Footer from '../components/footer'
 import './layout.css'
 
 const Layout = ({ children, css }) => (
@@ -19,6 +20,26 @@ const Layout = ({ children, css }) => (
           edges {
             node {
               name
+            }
+          }
+        }
+        me: contentfulPerson(name: { eq: "Joel AA"}) {
+          contentful_id
+          name
+          title
+          email
+          github
+          shortBio {
+            shortBio
+            childMarkdownRemark {
+              html
+            }
+          }
+          image {
+            fluid(maxWidth: 700) {
+              srcSetWebp
+              tracedSVG
+              ...GatsbyContentfulFluid_withWebp
             }
           }
         }
@@ -41,10 +62,8 @@ const Layout = ({ children, css }) => (
           }}
         >
           {children}
-          <footer>
-            © {new Date().getFullYear()} Joelaa.com
-          </footer>
         </div>
+        <Footer data={data.me} />
       </>
     )}
   />

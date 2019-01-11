@@ -22,7 +22,7 @@ const IndexPage = ({ data }) => {
       <Portfolio data={resume.resumeData.publications} />
 
       <div className={frontstyle.latestBlogPosts}>
-        <h3>{blogposts.edges.totalCount} Posts</h3>
+        <h3>Latest Posts</h3>
 
         {blogposts.edges.map(({ node }) => (
           <div key={node.contentful_id} className={frontstyle.blogPost}>

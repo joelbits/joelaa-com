@@ -8,10 +8,10 @@ function Experience({ data, css }) {
     const myExperience = data;
     return (
         <div id="experience" className={css.appExperience}>
-            <h2>
-                Experience
+            <div className={css.headerWrapper}>
+                <h2>{'Experience'}</h2>
                 <FaHistory className={css.experienceIcon} />
-            </h2>
+            </div>
             {myExperience && myExperience.map(alldata => (
             <div key={alldata.position} className={css.work}>
                 {(alldata.startDate || alldata.endDate) && <div className={css.dates}><span>{alldata.startDate}</span><span>{alldata.endDate}</span></div>}

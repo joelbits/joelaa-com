@@ -16,7 +16,9 @@ const Blog = ({ data }) => {
       <div>
         {blogposts.edges && blogposts.edges.map(({ node }) => (
           <div className={styles.blogPost}>
-            <Img fluid={node.heroImage.fluid} srcSetWebp={node.heroImage.fluid.srcSetWebp} />
+            <Link to={node.slug}>
+              <Img fluid={node.heroImage.fluid} srcSetWebp={node.heroImage.fluid.srcSetWebp} />
+            </Link>
             <div className={styles.postWrapper}>
               <Link to={node.slug}><h1>{node.title}</h1></Link>
               <h4>By: {node.author.name}</h4>
@@ -26,8 +28,6 @@ const Blog = ({ data }) => {
           </div>
         ))}
       </div>
-      <hr />
-      <Link to="/">Go back to the homepage</Link>
     </BlogLayout>
   )
 }

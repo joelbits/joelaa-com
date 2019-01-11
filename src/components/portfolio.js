@@ -8,10 +8,10 @@ import styles from '../styles/portfolio.module.sass'
 function Portfolio({ data, css }) {
   return (
     <div id="portfolio" className={css.appPortfolio}>
-        <h2>
-            {'Portfolio '}
+        <div className={css.headerWrapper}>
+            <h2>{'Portfolio '}</h2>
             <FaBriefcase className={css.portfolioIcon} />
-        </h2>
+        </div>
 
         <div className={css.publicationList}>
             {data && data.map(alldata => (
