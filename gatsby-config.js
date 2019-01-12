@@ -53,5 +53,15 @@ module.exports = {
         ]
       }
     },
+    {
+      resolve: 'gatsby-plugin-github-pages',
+      options: {
+        customDomain: 'joelaa.com',
+        publishOptions: {
+          branch: 'master',
+          dest: 'public/static/ghpages'
+        }
+      }
+    },
   ],
 }
