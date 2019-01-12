@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { FaBriefcase } from 'react-icons/fa'
+import Img from 'gatsby-image'
 import styleable from 'react-styleable'
 import styles from '../styles/portfolio.module.sass'
 
@@ -16,7 +17,9 @@ function Portfolio({ data, css }) {
         <div className={css.publicationList}>
             {data && data.map(alldata => (
                 <div key={alldata.name + alldata.releaseDate} className={css.publication}>
-                    {(alldata.image && alldata.website) && <a href={alldata.website} title="See Project Site"><img alt="Project Thumbnail" src={alldata.image} /></a>}
+                    {(alldata.image && alldata.website) && <a href={alldata.website} title="See Project Site">
+                        <Img src={alldata.image} alt="Project Thumbnail" />
+                    </a>}
                     {(alldata.startDate || alldata.endDate) && (
                         <div className={css.dates}>
                             <span>{alldata.startDate}</span>
