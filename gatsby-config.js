@@ -8,7 +8,7 @@ module.exports = {
     description: `Blog and website.`,
     author: `me@joelaa.com`,
   },
-  pathPrefix: "/joelaa-cms",
+  pathPrefix: "/",
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
