@@ -93,7 +93,7 @@ class Menu extends React.Component {
         <ul className={css.menuList} id="menuList">
           {siteSections.edges.map(edge => {
             const node = edge.node;
-            if (node.name === 'Blog') return <li key={node.name}><Link to={node.name.toLowerCase()}>{node.name}</Link></li>;
+            if (node.name === 'Blog') return <li key={node.name}><Link to={`/${node.name.toLowerCase()}`}>{node.name}</Link></li>;
             return <li key={node.name}><Link to={`#${node.name.toLowerCase()}`}>{node.name}</Link></li>;
           })
           }
