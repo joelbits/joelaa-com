@@ -166,7 +166,7 @@ query {
           Python
           Android
           Jenkins
-          ReactJs
+          React
           Javascript
         }
       }
