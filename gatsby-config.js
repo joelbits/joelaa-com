@@ -8,7 +8,7 @@ module.exports = {
     description: `Blog and website.`,
     author: `me@joelaa.com`,
   },
-  pathPrefix: "/",
+  pathPrefix: "/joelaa-cms",
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
@@ -51,16 +51,6 @@ module.exports = {
           `open sans\:300,400,400i,600`,
           `Rochester\:400,400i`
         ]
-      }
-    },
-    {
-      resolve: `gatsby-plugin-github-pages`,
-      options: {
-        customDomain: 'joelaa.com',
-        publishOptions: {
-          options: `gh-pages`,
-          dest: `public/static/ghpages`
-        }
       }
     },
   ],
