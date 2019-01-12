@@ -18,7 +18,7 @@ function Portfolio({ data, css }) {
             {data && data.map(alldata => (
                 <div key={alldata.name + alldata.releaseDate} className={css.publication}>
                     {(alldata.image && alldata.website) && <a href={alldata.website} title="See Project Site">
-                        <Img src={alldata.image} alt="Project Thumbnail" />
+                        <img src={alldata.image} alt="Project Thumbnail" />
                     </a>}
                     {(alldata.startDate || alldata.endDate) && (
                         <div className={css.dates}>
