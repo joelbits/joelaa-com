@@ -26,7 +26,7 @@ const BlogLayout = ({ children }) => (
             }
           }
         }
-        me: contentfulPerson(name: { eq: "Joel AA"}) {
+        me: contentfulPerson(contentful_id: { eq: "15jwOBqpxqSAOy2eOO4S0m"}) {
           contentful_id
           name
           title
