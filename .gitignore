@@ -61,6 +61,7 @@ typings/
 # gatsby files
 .cache/
 public
+!public/CNAME
 
 # Mac files
 .DS_Store
