@@ -14,14 +14,20 @@
     @media (max-width: 400px)
         font-size: 1em
     .headerWrapper
+        display: flex
+        align-items: center
+        justify-content: space-around
+        width: 100%
         h2
-            margin: 2em 5em
+            margin: 2em 0
             font-weight: 600
             font-size: 2.5em
-            display: inline-block
+            //display: inline-block
             @media (max-width: 400px)
                 font-size: 1.25em
                 margin: 2em 2em
+            @media (max-width: 768px)
+                font-size: 1.25em
         .educationIcon
             font-size: 2.5em
             display: inline-block
@@ -56,7 +62,7 @@
         @media (max-width: 400px)
             font-size: 0.85em
             max-width: 100%
-            padding: 2.5em 0.25em
+            padding: 2.5em 0.5em
         .dates
             span
                 display: inline
@@ -69,7 +75,8 @@
             margin: 0.25em auto 1em
         ul
             margin: 1em auto
-            max-width: 17em
+            max-width: 100%
+            padding: 0.75em
             li.course
                 text-align: center
                 font-size: 0.75em

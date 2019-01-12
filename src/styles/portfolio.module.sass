@@ -7,16 +7,27 @@
     display: block
     background: rgba(97, 218, 251, 0.3)
     text-align: center
-    padding: 4em 0
+    padding: 2em 0.25em
     .headerWrapper
+        display: flex
+        align-items: center
+        justify-content: space-around
+        width: 100%
         h2
-            margin: 2em 5em
+            margin: 2em 0
             font-weight: 600
             font-size: 2.5em
-            display: inline-block
+            //display: inline-block
+            @media (max-width: 400px)
+                font-size: 1.25em
+                margin: 2em 2em
+            @media (max-width: 768px)
+                font-size: 1.25em
         .portfolioIcon
-            display: inline-block
             font-size: 2.5em
+            display: inline-block
+            @media (max-width: 400px)
+                font-size: 2em
     span
         display: block
         margin: 0.5em auto
@@ -24,6 +35,9 @@
         display: flex
         flex-flow: row wrap
         width: 100%
+        padding: 0.5em
+        @media (max-width: 400px)
+            display: block
         .publication
             display: inline-block
             padding: 2em
@@ -31,6 +45,17 @@
             width: 45%
             outline: solid 1px hsla(5,5,5,0.1)
             box-shadow: 3px 3px 3px hsla(5,5,5,0.1)
+            background: rgba(97, 218, 251, 0.3)
+            @media (max-width: 400px)
+                display: block
+                width: 100%
+                margin: 2.5em 0
+                padding: 0.5em
+            @media (max-width: 768px)
+                display: block
+                width: 100%
+                margin: 2.5em 0
+                padding: 2.5em
             &:hover
                 //outline: solid px hsla(5,5,5,0.1)
                 box-shadow: 3px 3px 3px hsla(5,5,5,0.25)
@@ -47,3 +72,5 @@
                 width: 100%
                 //height: 33vh
                 margin-bottom: 1em
+                @media (max-width: 768px)
+                    width: 50%
