@@ -11,7 +11,7 @@ const Footer = ({ data }) => {
         </a>
         <a href={`//github.com/${github}`} className={styles.githubLink} target="_blank" rel="noopener noreferrer" title="View Github profile"><FaGithub className={styles.githubLogo} /></a>
         <p>
-          © {new Date().getFullYear()} {name} @ {window && new URL(window.location.href).hostname}
+          © {new Date().getFullYear()} {name} @ {(typeof window !== 'undefined') && new URL(window.location.href).hostname}
         </p>
     </div>
   )
