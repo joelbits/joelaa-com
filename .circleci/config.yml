@@ -41,6 +41,10 @@ jobs:
       - run:
           name: Gatsby build
           command: ./node_modules/.bin/gatsby build
+
+      - add_ssh_keys:
+          fingerprints:
+            - "db:d5:94:79:d0:cf:26:f4:9b:3c:5a:c9:b3:52:af:52"
       
       - run:
           name: Yarn deploy Gatsby to Github Pages
