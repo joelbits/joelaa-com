@@ -35,7 +35,7 @@ class Menu extends React.Component {
   }
 
   toggleClass(el, className) {
-    console.log(`Toggling classname: ${className} for el: ${el}`);
+    // console.log(`Toggling classname: ${className} for el: ${el}`);
     const menuElement = document.querySelector(el)
     menuElement.classList.toggle(className)
     this.forceUpdate();
@@ -43,11 +43,10 @@ class Menu extends React.Component {
 
   toggleMenu() {
     const menuElement = document.querySelector('#menuList')
-    console.log(menuElement.style.display)
-    if (menuElement.style.display === 'none')
-      menuElement.style.display = 'block';
-    else
+    if (menuElement.style.display === 'block')
       menuElement.style.display = 'none';
+    else
+      menuElement.style.display = 'block';
   }
 
   updateWindowDimensions() {
@@ -65,7 +64,6 @@ class Menu extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props.siteSections)
     this.updateWindowDimensions()
     window.addEventListener('resize', this.updateWindowDimensions)
     window.addEventListener('scroll', this.updateWindowDimensions)

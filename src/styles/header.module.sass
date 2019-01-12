@@ -15,16 +15,22 @@
   min-height: 100vh
   background: #282c34 url('../images/bg.svg') no-repeat center fixed
   background-size: cover
+  @media (max-width: 400px)
+    justify-content: flex-start
+    //align-items: flex-start
 .appTitles
   opacity: 0.82
   width: 20em
   margin-bottom: 0.75em
+  @media (max-width: 400px)
+    width: 100%
+    padding: 6em 0
 .subTitle
-  font-size: 1.25em
+  font-size: 1em
   line-height: 1.25em
 .mainTitle
   font-weight: 600
-  font-size: calc(40px + 2vmin)
+  font-size: calc(25px + 2vmin)
   display: flex
   justify-content: center
   align-items: center
@@ -59,3 +65,8 @@
   &:hover
     filter: brightness(100%)
     transition: filter ease-in 0.1s
+  @media (max-width: 400px)
+    margin: 0 auto
+    right: 0
+    left: 0
+    bottom: 0.5em
