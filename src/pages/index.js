@@ -71,7 +71,6 @@ query {
         publishDate(formatString: "MMMM DD, YYYY")
         createdAt
         updatedAt
-        tags
         heroImage {
           id
           fluid(maxWidth: 700) {

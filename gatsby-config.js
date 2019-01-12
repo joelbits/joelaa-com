@@ -54,12 +54,12 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-plugin-github-pages',
+      resolve: `gatsby-plugin-github-pages`,
       options: {
         customDomain: 'joelaa.com',
         publishOptions: {
-          branch: 'master',
-          dest: 'public/static/ghpages'
+          options: `gh-pages`,
+          dest: `public/static/ghpages`
         }
       }
     },
