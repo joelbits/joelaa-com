@@ -36,7 +36,7 @@
     "start": "npm run develop",
     "format": "prettier --write \"src/**/*.js\"",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
-    "deploy": "gatsby build --prefix-paths && gh-pages-with-token -d public -b gh-pages --message '[skip ci] Updates'"
+    "deploy": "gatsby build && gh-pages-with-token -d public -b gh-pages --message '[skip ci] Updates'"
   },
   "devDependencies": {
     "prettier": "^1.15.2",
