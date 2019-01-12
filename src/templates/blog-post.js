@@ -32,10 +32,14 @@ export const query = graphql`
             updatedAt
             tags
             heroImage {
-            id
-            fluid(maxWidth: 700) {
-                srcSetWebp
-            }
+                id
+                fluid(maxWidth: 700) {
+                    src
+                    srcSet
+                    srcSetWebp
+                    aspectRatio
+                    sizes
+                }
             }
             author {
                 contentful_id
@@ -49,12 +53,16 @@ export const query = graphql`
                 github
                 image {
                     fluid(maxWidth: 200) {
-                    srcSetWebp
+                        src
+                        srcSet
+                        srcSetWebp
+                        aspectRatio
+                        sizes
                     }
                 }
                 avatar {
                     fluid(maxWidth: 200) {
-                    srcSetWebp
+                        srcSetWebp
                     }
                 }
                 shortBio {

@@ -15,7 +15,7 @@ const Blog = ({ data }) => {
       <h1>Recent Blog Posts</h1>
       <div>
         {blogposts.edges && blogposts.edges.map(({ node }) => (
-          <div className={styles.blogPost}>
+          <div className={styles.blogPost} key={node.contentful_id}>
             <Link to={node.slug}>
               <Img fluid={node.heroImage.fluid} srcSetWebp={node.heroImage.fluid.srcSetWebp} />
             </Link>
@@ -50,7 +50,10 @@ query {
     }
     image {
       fluid(maxWidth: 700) {
+        src
+        srcSet
         srcSetWebp
+        aspectRatio
         tracedSVG
         ...GatsbyContentfulFluid_withWebp
       }
@@ -69,7 +72,11 @@ query {
         heroImage {
           id
           fluid(maxHeight: 700, ) {
+            src
+            srcSet
             srcSetWebp
+            aspectRatio
+            sizes
           }
         }
         author {
@@ -84,7 +91,11 @@ query {
           github
           image {
             fluid(maxWidth: 200) {
+              src
+              srcSet
               srcSetWebp
+              aspectRatio
+              sizes
             }
           }
           avatar {
