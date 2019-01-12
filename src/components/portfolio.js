@@ -17,7 +17,7 @@ function Portfolio({ data, css }) {
         <div className={css.publicationList}>
             {data && data.map(alldata => (
                 <div key={alldata.name + alldata.releaseDate} className={css.publication}>
-                    {(alldata.image && alldata.website) && <a href={alldata.website} title="See Project Site">
+                    {(alldata.image && alldata.website) && <a href={`//${alldata.website}`} title="See Project Site">
                         <img src={alldata.image} alt="Project Thumbnail" />
                     </a>}
                     {(alldata.startDate || alldata.endDate) && (
@@ -29,7 +29,7 @@ function Portfolio({ data, css }) {
                     {alldata.publisher && <span className={css.publisher}>{alldata.publisher}</span>}
                     {alldata.name && <span className={css.name}>{alldata.name}</span>}
                     {alldata.releaseDate && <span className={css.releaseDate}>{alldata.releaseDate}</span>}
-                    {alldata.website && <span className={css.website}><a href={alldata.website}>{alldata.website}</a></span>}
+                    {alldata.website && <span className={css.website}><a href={`//${alldata.website}`}>{alldata.website}</a></span>}
                     {alldata.summary && <span className={css.summary}>{alldata.summary}</span>}
                 </div>
             ))}
