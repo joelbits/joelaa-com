@@ -23,7 +23,7 @@ const Layout = ({ children, css }) => (
             }
           }
         }
-        me: contentfulPerson(name: { eq: "Joel AA"}) {
+        me: contentfulPerson(name: { eq: "Joel Å"}) {
           contentful_id
           name
           title
