@@ -22,7 +22,7 @@ class Menu extends React.Component {
   }
 
   isMobile() {
-    const res = (this.state.width < 650) ? true : false;
+    const res = (this.state.width < 800) ? true : false;
     return res
   }
 
