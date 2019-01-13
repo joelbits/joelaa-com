@@ -5,7 +5,8 @@
     width: 100%
     z-index: 999999
     display: block
-    background: rgba(97, 218, 251, 0.3)
+    background: rgba(78, 91, 122, 1)
+    color: #e7ecef
     text-align: center
     padding: 4em
     @media (max-width: 400px)
@@ -42,10 +43,10 @@
             display: block
         .publication
             display: inline-block
-            padding: 0.25em
+            padding: 0.25em 0.25em 1em 0.25em
             margin: 0.5em
             width: 45%
-            outline: solid 1px hsla(5,5,5,0.1)
+            outline: solid 0.1px darkgray
             box-shadow: 3px 3px 3px hsla(5,5,5,0.1)
             @media (max-width: 400px)
                 display: block
@@ -59,8 +60,7 @@
                 padding: 2.5em
             &:hover
                 //outline: solid px hsla(5,5,5,0.1)
-                box-shadow: 3px 3px 3px hsla(5,5,5,0.25)
-                //filter: drop-shadow(3px 3px 3px hsla(5,5,5,0.3))
+                box-shadow: 3px 3px 3px hsla(5,5,5,0.35)
             .publisher
                 font-size: 1em
             .name
@@ -76,3 +76,15 @@
                 margin-bottom: 1em
                 @media (max-width: 768px)
                     width: 50%
+    a, a:visited
+        text-decoration: none
+        color: black
+        transition: all ease-in 0.2s
+        &:active, &:focus
+            outline: 0
+        @media (hover: hover)
+            &:hover
+                color: hsla(255,255,255,0.42)
+                transition: all ease-in 0.2s
+                text-decoration: underline
+                outline: 0
