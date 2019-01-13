@@ -18,6 +18,7 @@ class Menu extends React.Component {
       scrollPos: 0,
     }
     this.isMobile = this.isMobile.bind(this);
+    this.toggleMenu = this.toggleMenu.bind(this);
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
 
@@ -37,6 +38,7 @@ class Menu extends React.Component {
   }
 
   toggleMenu() {
+    if (!this.isMobile()) return;
     const menuElement = document.querySelector('#menuList')
     if (menuElement.style.display === 'block')
       menuElement.style.display = 'none';
@@ -92,7 +94,7 @@ class Menu extends React.Component {
             return <li key={node.name} onClick={this.toggleMenu}><Link to={`#${node.name.toLowerCase()}`} activeClassName={css.activeLink}>{node.name}</Link></li>;
           })
           }
-          <li>
+          <li className={css.socialLinks}>
             <a href="//github.com/joelbits" className={css.githubLink} target="_blank" rel="noopener noreferrer" title="View Github profile"><FaGithub className={css.githubLogo} /></a>
           </li>
         </ul>

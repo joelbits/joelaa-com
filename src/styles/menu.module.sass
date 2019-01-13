@@ -41,6 +41,29 @@
                 &:hover
                     text-shadow: 0.1em 0.1em 0.1em hsla(255,255,255,0.42)
                     transition: text-shadow ease-in 0.2s
+    .menuList
+        margin: 0
+        padding: 0.25em
+        display: flex
+        align-items: center
+        justify-content: flex-end
+        font-family: 'Open Sans'
+        font-size: 1.5em
+        flex: 9
+        li
+            display: inline
+            margin: 0 1em
+            a, a:visited, a:active
+                text-decoration: none
+                color: #fefefe
+                transition: all ease-in 0.2s
+                outline: 0
+                &:hover
+                    color: hsla(255,255,255,0.42)
+                    transition: all ease-in 0.2s
+                    text-decoration: underline
+            a:active
+                background: red !important
 .navBarMobile
     font-size: 0.7em
     background: transparent
@@ -118,6 +141,11 @@
                         transition: all ease-in 0.2s
                         text-decoration: underline
                         outline: 0
+        .socialLinks
+            display: flex
+            align-items: center
+            justify-content: center
+            margin-top: 1em
 .docked
     background: hsla(0,0,0,0.82)
     z-index: 999
@@ -126,33 +154,6 @@
 .hidden
     display: none
     color: red
-.menuList
-    margin: 0
-    padding: 0.25em
-    display: flex
-    align-items: center
-    justify-content: flex-end
-    font-family: 'Open Sans'
-    font-size: 1.5em
-    flex: 9
-    li
-        display: inline
-        margin: 0 1em
-        a, a:visited, a:active
-            text-decoration: none
-            color: #fefefe
-            transition: all ease-in 0.2s
-            &:hover
-                color: hsla(255,255,255,0.42)
-                transition: all ease-in 0.2s
-                text-decoration: underline
-            color: #fefefe
-            transition: all ease-in 0.2s
-            &:hover
-                color: hsla(255,255,255,0.42)
-                transition: all ease-in 0.2s
-                text-decoration: underline
-
 .githubLink
     display: flex
     padding: 1px
