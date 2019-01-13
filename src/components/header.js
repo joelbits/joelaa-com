@@ -4,9 +4,19 @@ import { FaArrowDown } from 'react-icons/fa'
 import styleable from 'react-styleable'
 import styles from '../styles/header.module.sass'
 
-const Header = ({ siteTitle, css }) => {
+const Header = ({ siteTitle, data, css }) => {
   const scrollDown = () => {
     window.scrollTo(0, document.body.scrollHeight);
+  };
+
+  const getLastWord = (fromString) => {
+    let n = fromString.split(' ');
+    return n[n.length - 1];
+  };
+
+  const removeLastWord = (fromString) => {
+    let i = fromString.lastIndexOf(' ');
+    return fromString.substring(0, i);
   };
   
   return (
@@ -14,9 +24,9 @@ const Header = ({ siteTitle, css }) => {
       <header className={css.appHeader}>
         <div className={css.hero}>
           <section className={css.appTitles}>
-            <p className={css.subTitle}>Swedish Computer Science Student, Web & Software</p>
+            <p className={css.subTitle}>{removeLastWord(data.shortBio.shortBio)}</p>
             <p className={css.mainTitle}>
-              {'DEVELOPER.'}
+              {getLastWord(data.shortBio.shortBio)}
             </p>
             <button className={css.btnContactMe} title="Available for hire and projects!" onClick={scrollDown}>CONTACT ME</button>
           </section>

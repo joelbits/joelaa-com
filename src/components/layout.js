@@ -51,7 +51,7 @@ const Layout = ({ children, css }) => (
           siteTitle={data.siteInfo.siteMetadata.title} 
           siteSections={data.siteSections}
         />
-        <Header siteTitle={data.siteInfo.siteMetadata.title} />
+        <Header data={data.me} siteTitle={data.siteInfo.siteMetadata.title} />
         <div 
           className="contentWrapper"
           style={{
