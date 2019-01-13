@@ -6,7 +6,7 @@ import Menu from './menu'
 import Header from './header'
 import Footer from './footer'
 import './layout.css'
-import cssBlogMenu from '../styles/blogMenu.module.sass'
+import cssMenu from '../styles/menu.module.sass'
 import cssBlogHeader from '../styles/blogHeader.module.sass'
 
 
@@ -49,11 +49,11 @@ const BlogLayout = ({ children }) => (
       }
     `}
     render={data => (
-      <div className={cssBlogMenu.blogPage}>
+      <div className={cssMenu.blogPage}>
         <Menu
           siteTitle={data.siteInfo.siteMetadata.title} 
           siteSections={data.siteSections}
-          css={cssBlogMenu}
+          css={cssMenu}
         />
         <Header 
           siteTitle={data.siteInfo.siteMetadata.title}

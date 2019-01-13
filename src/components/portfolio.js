@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { FaBriefcase } from 'react-icons/fa'
-import Img from 'gatsby-image'
 import styleable from 'react-styleable'
 import styles from '../styles/portfolio.module.sass'
 

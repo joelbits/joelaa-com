@@ -25,8 +25,7 @@
         a
             width: 100%
             text-align: left
-            &:active
-                border: 0
+            &:active, &:visited, &:focus
                 outline: 0
             h1
                 width: 100%
@@ -52,7 +51,6 @@
     z-index: 99999
     width: 100%
     padding: 1em
-    //margin: 1em 0.25em
     transition: all ease-in-out 0.5s
     display: flex
     flex-direction: column
@@ -68,13 +66,15 @@
         svg
             color: #F2994A
             font-size: 2.5em
-            &:hover
-                //text-shadow: 0.1em 0.1em 0.1em hsla(255,255,255,0.42)
-                box-shadow: 0.15em 0.25em 0.5em 1px hsla(255,255,255,0.42)
-                transition: text-shadow ease-in 0.2s
+            @media (hover: hover)
+                &:hover
+                    box-shadow: 0.15em 0.25em 0.5em 1px hsla(255,255,255,0.42)
+                    transition: text-shadow ease-in 0.2s
         a
             width: 100%
             text-align: center
+            &:active, &:visited, &:focus
+                outline: 0
             h1
                 width: 100%
                 font-size: 1em
@@ -90,37 +90,34 @@
                     text-shadow: 0.1em 0.1em 0.1em hsla(255,255,255,0.42)
                     transition: text-shadow ease-in 0.2s
     .menuList
-        background: transparent
         border: 0.1px solid black
         margin: 0.25em
         padding: 0.25em
-        //display: block
         display: none
         font-family: 'Open Sans'
         font-size: 1.5em
         width: 100%
         text-align: center
-        background: hsla(5,5,5,0.82)
+        background: hsla(5,5,5,1)
         li
             display: block
             background: hsla(5,5,5,0.62)
             border-radius: 0.5em
             margin: 0.5em 0
             padding: 1em
-            a, a:visited, a:active
+            a, a:visited
                 text-decoration: none
                 color: #fefefe
                 transition: all ease-in 0.2s
-                &:hover
-                    color: hsla(255,255,255,0.42)
-                    transition: all ease-in 0.2s
-                    text-decoration: underline
-                color: #fefefe
-                transition: all ease-in 0.2s
-                &:hover
-                    color: hsla(255,255,255,0.42)
-                    transition: all ease-in 0.2s
-                    text-decoration: underline
+                //outline: 0
+                &:active, &:focus
+                    outline: 0
+                @media (hover: hover)
+                    &:hover
+                        color: hsla(255,255,255,0.42)
+                        transition: all ease-in 0.2s
+                        text-decoration: underline
+                        outline: 0
 .docked
     background: hsla(0,0,0,0.82)
     z-index: 999
@@ -170,3 +167,5 @@
         background: #fefefe
         border-radius: 0.5em
         transition: color background ease-in 0.4s
+.activeLink
+    text-decoration: underline !important

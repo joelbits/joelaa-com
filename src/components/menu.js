@@ -27,15 +27,10 @@ class Menu extends React.Component {
   }
 
   shouldDock() {
-    const res = (this.state.scrollPos > 50);
-    if (res) {
-      console.log(`Menu should DOCK! (scrolled >50 px)`)
-    }
-    return res;
+    return (this.state.scrollPos > 50);
   }
 
   toggleClass(el, className) {
-    // console.log(`Toggling classname: ${className} for el: ${el}`);
     const menuElement = document.querySelector(el)
     menuElement.classList.toggle(className)
     this.forceUpdate();
@@ -93,8 +88,8 @@ class Menu extends React.Component {
         <ul className={css.menuList} id="menuList">
           {siteSections.edges.map(edge => {
             const node = edge.node;
-            if (node.name === 'Blog') return <li key={node.name}><Link to={`/${node.name.toLowerCase()}`}>{node.name}</Link></li>;
-            return <li key={node.name}><Link to={`#${node.name.toLowerCase()}`}>{node.name}</Link></li>;
+            if (node.name === 'Blog') return <li key={node.name} onClick={this.toggleMenu}><Link to={`/${node.name.toLowerCase()}`} activeClassName={css.activeLink}>{node.name}</Link></li>;
+            return <li key={node.name} onClick={this.toggleMenu}><Link to={`#${node.name.toLowerCase()}`} activeClassName={css.activeLink}>{node.name}</Link></li>;
           })
           }
           <li>
