@@ -19,7 +19,7 @@ const IndexPage = ({ data }) => {
       <Skills data={resume.resumeData.skills} />
       <Education data={resume.resumeData.education} />
       <Experience data={resume.resumeData.work} />
-      <Portfolio data={resume.resumeData.publications} />
+      <Portfolio data={resume} />
 
       <div className={frontstyle.latestBlogPosts}>
         <h3>Latest Posts</h3>
@@ -131,7 +131,40 @@ query {
         }
     }
   }
-  resume:  contentfulResumeInfo(contentful_id: { eq: "5miYodu4o0WkCC4woI4K0Y" }) {
+  resume: contentfulResumeInfo(contentful_id: { eq: "5miYodu4o0WkCC4woI4K0Y" }) {
+    images {
+      description
+      title
+      internal {
+        type
+      }
+      file {
+        url
+        fileName
+        details {
+          size
+          image {
+            width
+            height
+          }
+        }
+      }
+      fluid(maxWidth:350) {
+        src
+        srcSet
+        srcSetWebp
+        aspectRatio
+        sizes
+      }
+      fixed(width: 350) {
+        src
+        srcSet
+        srcSetWebp
+        aspectRatio
+        width
+        height
+      }
+    }
     resumeData {
       education {
         gpa
