@@ -4,30 +4,32 @@
     font-family: 'Open Sans'
     min-height: 100vh
     width: 100%
-    padding: 2em 0 5em 0
+    padding: 0em 4em
     align-items: center
     justify-content: center
     text-align: center
+    @media (max-width: 400px)
+        padding: 0.25em
     .headerWrapper
         display: flex
         align-items: center
-        justify-content: space-around
+        justify-content: space-between
         width: 100%
+        padding: 2em 2em
         h2
             margin: 2em 0
+            font-family: 'Open Sans'
             font-weight: 600
             font-size: 2.5em
-            //display: inline-block
-            @media (max-width: 400px)
-                font-size: 1.25em
-                margin: 2em 2em
             @media (max-width: 768px)
                 font-size: 1.25em
+            @media (max-width: 400px)
+                font-size: 1.75em
         .experienceIcon
             font-size: 2.5em
             display: inline-block
             @media (max-width: 400px)
-                font-size: 2em
+                font-size: 1.75em
     .work
         max-width: 900px
         margin: 2.5em auto
@@ -36,7 +38,7 @@
         //filter: drop-shadow(3px 3px 3px hsla(5,5,5,0.3))
         box-shadow: 3px 3px 3px hsla(5,5,5,0.3)
         @media (max-width: 400px)
-            padding: 2em 0.5em
+            padding: 2em 0.75em
             font-size: 0.75em
         span:first-child
             display: inline

@@ -45,7 +45,7 @@ function Portfolio({ data, css }) {
                     <div key={publication.name + publication.releaseDate} className={css.publication}>
                         {(images && publication.website && getImageForPublication(publication.name, 'fixed') !== false) && (
                             <a href={getImageForPublication(publication.name, 'url')} title="See Project Screenshot">
-                                <Img fixed={getImageForPublication(publication.name, "fixed")} alt="Project Thumbnail" />
+                                <Img fluid={getImageForPublication(publication.name, 'fluid')} alt="Project Thumbnail" />
                             </a>
                         )}
                         {(publication.startDate || publication.endDate) && (
@@ -54,8 +54,8 @@ function Portfolio({ data, css }) {
                                 <span>{publication.endDate}</span>
                             </div>
                         )}
-                        {publication.publisher && <span className={css.publisher}>{publication.publisher}</span>}
                         {publication.name && <span className={css.name}>{publication.name}</span>}
+                        {publication.publisher && <span className={css.publisher}>{publication.publisher}</span>}
                         {publication.releaseDate && <span className={css.releaseDate}>{publication.releaseDate}</span>}
                         {publication.website && <span className={css.website}><a href={`//${publication.website}`}>{publication.website}</a></span>}
                         {publication.summary && <span className={css.summary}>{publication.summary}</span>}

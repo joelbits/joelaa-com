@@ -16,9 +16,9 @@ const IndexPage = ({ data }) => {
     <Layout>
       <SEO title="Home" keywords={[`joelaa`, `developer`, `joelaa.com`]} />
 
-      <Skills data={resume.resumeData.skills} />
-      <Education data={resume.resumeData.education} />
       <Experience data={resume.resumeData.work} />
+      <Education data={resume.resumeData.education} />
+      <Skills data={resume.resumeData.skills} />
       <Portfolio data={resume} />
 
       <div className={frontstyle.latestBlogPosts}>
@@ -149,7 +149,7 @@ query {
           }
         }
       }
-      fluid(maxWidth:350) {
+      fluid(maxHeight: 400) {
         src
         srcSet
         srcSetWebp
