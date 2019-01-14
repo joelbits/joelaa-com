@@ -55,7 +55,8 @@ const BlogLayout = ({ children }) => (
           siteSections={data.siteSections}
           css={cssMenu}
         />
-        <Header 
+        <Header
+          data={data.me}
           siteTitle={data.siteInfo.siteMetadata.title}
           css={cssBlogHeader}
         />
@@ -63,7 +64,7 @@ const BlogLayout = ({ children }) => (
           style={{
             margin: `0 auto`,
             maxWidth: 960,
-            padding: `0px 1.0875rem 1.45rem`,
+            padding: `0`,
             paddingTop: 0,
           }}
         >

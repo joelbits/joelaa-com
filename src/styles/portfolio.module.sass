@@ -8,9 +8,9 @@
     background: rgba(78, 91, 122, 1)
     color: #e7ecef
     text-align: center
-    padding: 4em
+    padding: 6em 4em
     @media (max-width: 400px)
-        padding: 4em 0
+        padding: 6em 0.5em
     .headerWrapper
         display: flex
         align-items: center
@@ -18,10 +18,13 @@
         width: 100%
         padding: 2em 2em
         margin-bottom: 2em
+        @media (max-width: 400px)
+            padding: 2em 0.5em
         h2
             font-family: 'Open Sans'
             font-weight: 600
             font-size: 2.5em
+            margin: 0
             @media (max-width: 768px)
                 font-size: 1.25em
             @media (max-width: 400px)
@@ -38,26 +41,29 @@
         display: flex
         flex-flow: row wrap
         width: 100%
-        padding: 0.5em
+        align-items: flex-start
+        justify-content: center
         @media (max-width: 400px)
             display: block
         .publication
             display: inline-block
-            padding: 0.25em 0.25em 1em 0.25em
+            padding: 0
             margin: 0.5em
             width: 45%
+            height: 100%
             outline: solid 0.1px darkgray
             box-shadow: 3px 3px 3px hsla(5,5,5,0.1)
+            text-align: center
+            @media (max-width: 768px)
+                display: block
+                width: 100%
+                margin: 2.5em 0
+                padding: 2.5em 0
             @media (max-width: 400px)
                 display: block
                 width: 100%
                 margin: 2.5em 0
                 padding: 0.5em
-            @media (max-width: 768px)
-                display: block
-                width: 100%
-                margin: 2.5em 0
-                padding: 2.5em
             &:hover
                 //outline: solid px hsla(5,5,5,0.1)
                 box-shadow: 3px 3px 3px hsla(5,5,5,0.35)
@@ -65,14 +71,16 @@
                 font-size: 1em
             .name
                 font-size: 1.5em
+                line-height: 1.2em
             .releaseDate
                 font-style: italic
             .summary
-                margin-top: 1em
+                margin: 1em 0.75em 1em 0.75em
                 font-weight: 300
+                text-align: left
+                line-height: 1.25em
             img
                 width: 100%
-                //height: 33vh
                 margin-bottom: 1em
                 @media (max-width: 768px)
                     width: 50%

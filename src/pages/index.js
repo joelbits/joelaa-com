@@ -22,7 +22,7 @@ const IndexPage = ({ data }) => {
       <Portfolio data={resume} />
 
       <div className={frontstyle.latestBlogPosts}>
-        <h3>Latest Posts</h3>
+        <Link to={'/blog'}><h3>Latest Posts</h3></Link>
 
         {blogposts.edges.map(({ node }) => (
           <div key={node.contentful_id} className={frontstyle.blogPost}>
