@@ -44,7 +44,7 @@ jobs:
 
       - add_ssh_keys:
           fingerprints:
-            - $SSH_FINGERPRINT
+            - "$SSH_FINGERPRINT"
       
       - run:
           name: Yarn deploy Gatsby to Github Pages
