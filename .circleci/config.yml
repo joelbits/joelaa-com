@@ -44,7 +44,7 @@ jobs:
 
       - add_ssh_keys:
           fingerprints:
-            - "db:d5:94:79:d0:cf:26:f4:9b:3c:5a:c9:b3:52:af:52"
+            - $SSH_FINGERPRINT
       
       - run:
           name: Yarn deploy Gatsby to Github Pages
