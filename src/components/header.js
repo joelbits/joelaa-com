@@ -26,7 +26,7 @@ const Header = ({ siteTitle, data, css }) => {
           <section className={css.appTitles}>
             {data && data.shortBio && <p className={css.subTitle}>{removeLastWord(data.shortBio.shortBio)}</p>}
             {data && data.shortBio && <p className={css.mainTitle}>{getLastWord(data.shortBio.shortBio)}</p>}
-            <button className={css.btnContactMe} title="Available for hire and projects!" onClick={scrollDown}>CONTACT ME</button>
+            <button className={css.btnContactMe} title="NOT currently available for projects!" onClick={scrollDown}>CONTACT ME</button>
           </section>
         </div>
       </header>
