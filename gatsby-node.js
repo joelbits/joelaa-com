@@ -1,5 +1,9 @@
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const path = require(`path`)
+const sharp = require('sharp')
+
+sharp.cache(false)
+sharp.simd(false)
 /**
  * Implement Gatsby's Node APIs in this file.
  *
