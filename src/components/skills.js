@@ -16,10 +16,10 @@ function Skills({ data, css }) {
             </div>
 
             <div className={css.skillsList}>
-                {skillsData && skillsData.map((alldata) => {
-                    const { logos } = alldata;
+                {skillsData && skillsData.map((allSkillsData) => {
+                    const { logos } = allSkillsData;
                     if (logos.length === 0) return null;
-                    return alldata.keywords.map(keyword => (
+                    return allSkillsData.keywords.map(keyword => (
                         <div key={keyword} className={css.skill}>
                             <Icon name={logos[keyword]} />
                             <span>{keyword}</span>

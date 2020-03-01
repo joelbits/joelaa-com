@@ -17,6 +17,9 @@ function Icon({ name }) {
     case 'FaJsSquare':
       res = (<FaJsSquare />);
       break;
+    case 'FaTsSquare':
+      res = (<FaJsSquare />);
+      break;
     case 'FaReact':
       res = (<FaReact />);
       break;
@@ -45,7 +48,7 @@ function Icon({ name }) {
       res = (<FaJenkins />);
       break;
     default:
-      res = (<div>NO LOGO</div>);
+      res = (<div> X </div>);
       break;
   }
   return res;

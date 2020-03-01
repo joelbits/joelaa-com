@@ -190,17 +190,15 @@ query {
         keywords
         logos {
           AWS
-          CSS
-          HTML
-          Java
-          Linux
-          Docker
-          NodeJs
-          Python
           Android
+          Java
           Jenkins
+          Kubernetes
+          NodeJs
+          Linux
+          Python
           React
-          Javascript
+          TypeScript
         }
       }
       publications {

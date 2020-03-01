@@ -19,6 +19,7 @@ function Experience({ data, css }) {
                 {alldata.company && alldata.website
                 && <span className={css.company}><a href={alldata.website}>{alldata.company}</a></span>}
                 {alldata.summary && <span className={css.summary}>{alldata.summary}</span>}
+                {alldata.highlights && alldata.highlights[0] !== "" && alldata.highlights.map(highlight => <span className={css.highlight}>- {highlight}</span>)}
             </div>
             ))}
         </div>
