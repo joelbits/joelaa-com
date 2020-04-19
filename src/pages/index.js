@@ -26,7 +26,7 @@ const IndexPage = ({ data }) => {
 
         {blogposts.edges.map(({ node }) => (
           <div key={node.contentful_id} className={frontstyle.blogPost}>
-            <Link to={node.slug}>
+            <Link to={`/${node.slug}`}>
               <h4>{node.title} - {node.publishDate}</h4>
               <p>{node.body.childMarkdownRemark.excerpt}</p>
             </Link>

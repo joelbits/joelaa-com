@@ -38,7 +38,7 @@ const Layout = ({ children, css }) => (
           image {
             fluid(maxWidth: 700) {
               srcSetWebp
-              tracedSVG
+              src
               ...GatsbyContentfulFluid_withWebp
             }
           }
@@ -48,11 +48,11 @@ const Layout = ({ children, css }) => (
     render={data => (
       <>
         <Menu
-          siteTitle={data.siteInfo.siteMetadata.title} 
+          siteTitle={data.siteInfo.siteMetadata.title}
           siteSections={data.siteSections}
         />
         <Header data={data.me} siteTitle={data.siteInfo.siteMetadata.title} />
-        <div 
+        <div
           className="contentWrapper"
           style={{
             margin: `0 auto`,

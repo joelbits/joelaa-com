@@ -3,6 +3,7 @@ import React from 'react'
 import { FaArrowDown } from 'react-icons/fa'
 import styleable from 'react-styleable'
 import styles from '../styles/header.module.sass'
+import Img from 'gatsby-image'
 
 const Header = ({ siteTitle, data, css }) => {
   const scrollDown = () => {
@@ -23,6 +24,11 @@ const Header = ({ siteTitle, data, css }) => {
     <React.Fragment>
       <header className={css.appHeader}>
         <div className={css.hero}>
+          <Img
+            className={css.heroImage}
+            srcSetWebp={data.image.fluid.srcSetWebp}
+            fluid={data.image.fluid}
+          />
           <section className={css.appTitles}>
             {data && data.shortBio && <p className={css.subTitle}>{removeLastWord(data.shortBio.shortBio)}</p>}
             {data && data.shortBio && <p className={css.mainTitle}>{getLastWord(data.shortBio.shortBio)}</p>}

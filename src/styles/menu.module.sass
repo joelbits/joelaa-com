@@ -20,23 +20,27 @@
         text-align: left
         svg
             display: none
-            color: #F2994A
+            color: #fefefe
             font-size: 2.5em
         a
+            display: flex
+            flex-flow: row nowrap
+            align-items: center
             width: 100%
             text-align: left
             &:active, &:visited, &:focus
                 outline: 0
+            div
+                display: inline-table !important
             h1
                 width: 100%
                 white-space: nowrap
-                font-size: 1em
                 float: left
-                margin: 0
+                margin: 0 0 0 0.5em
                 font-family: 'Rochester', cursive
                 font-weight: 500
                 font-size: 36px
-                color: #F2994A
+                color: #fefefe
                 transition: text-shadow ease-out 1s
                 &:hover
                     text-shadow: 0.1em 0.1em 0.1em hsla(255,255,255,0.42)
@@ -47,7 +51,7 @@
         display: flex
         align-items: center
         justify-content: flex-end
-        font-family: 'Open Sans'
+        font-family: 'Open Sans', sans-serif
         font-size: 1.5em
         flex: 9
         li
@@ -87,7 +91,7 @@
         align-items: center
         justify-content: flex-start
         svg
-            color: #F2994A
+            color: #fefefe
             font-size: 2.5em
             @media (hover: hover)
                 &:hover
@@ -100,14 +104,13 @@
                 outline: 0
             h1
                 width: 100%
-                font-size: 1em
                 float: left
                 margin: 0
                 white-space: nowrap
                 font-family: 'Rochester', cursive
                 font-weight: 500
                 font-size: 36px
-                color: #F2994A
+                color: #fefefe
                 transition: text-shadow ease-out 1s
                 &:hover
                     text-shadow: 0.1em 0.1em 0.1em hsla(255,255,255,0.42)
@@ -116,12 +119,13 @@
         border: 0.1px solid black
         margin: 0.25em
         padding: 0.25em
-        display: none
-        font-family: 'Open Sans'
+        font-family: 'Open Sans', sans-serif
         font-size: 1.5em
         width: 100%
+        height: 80vh
         text-align: center
         background: hsla(5,5,5,1)
+        transition: display ease-in-out 0.5s
         li
             display: block
             background: hsla(5,5,5,0.62)
@@ -152,7 +156,6 @@
     position: fixed
 .hidden
     display: none
-    color: red
 .githubLink
     display: flex
     padding: 1px
@@ -166,6 +169,6 @@
         color: black
         background: #fefefe
         border-radius: 0.5em
-        transition: color background ease-in 0.4s
+        transition: background-color ease-in 0.4s
 .activeLink
     text-decoration: underline !important
