@@ -27,7 +27,7 @@ function Experience({ data, css }) {
           }
         </div>
       ))
-      })}
+      }
     </div>
   )
 }
