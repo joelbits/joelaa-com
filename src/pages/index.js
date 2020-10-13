@@ -11,14 +11,14 @@ import Skills from '../components/skills'
 import frontstyle from '../styles/frontpage.module.sass'
 
 const IndexPage = ({ data }) => {
-  const { blogposts, resume } = data
+  const { blogposts, images, resume } = data
   return (
     <Layout>
       <SEO title="Home" keywords={[`joelaa`, `developer`, `joelaa.com`]} />
 
       <Experience data={resume.resumeData.work} />
       <Education data={resume.resumeData.education} />
-      <Skills data={resume.resumeData.skills} />
+      <Skills data={resume.resumeData.skills} images={images} />
       <Portfolio data={resume} />
 
       <div className={frontstyle.latestBlogPosts}>
@@ -59,6 +59,31 @@ query {
         srcSetWebp
         tracedSVG
         ...GatsbyContentfulFluid_withWebp
+      }
+    }
+  }
+  images: allContentfulAsset {
+    edges {
+      node {
+        file {
+          fileName
+          url
+          details {
+            image {
+              height
+              width
+            }
+          }
+        }
+        fluid(maxWidth: 1024) {
+          src
+          srcSet
+          srcSetWebp
+          tracedSVG
+          sizes
+          aspectRatio
+          ...GatsbyContentfulFluid_withWebp
+        }
       }
     }
   }
@@ -192,7 +217,9 @@ query {
           AWS
           Android
           Java
-          Jenkins
+          Spring
+          Kafka
+          ElasticSearch
           Kubernetes
           NodeJs
           Linux

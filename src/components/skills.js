@@ -6,7 +6,7 @@ import styleable from 'react-styleable'
 import styles from '../styles/skills.module.sass'
 
 
-function Skills({ data, css }) {
+function Skills({ data, images, css }) {
     const skillsData = data;
     return (
         <div id="skills" className={css.appSkills}>
@@ -21,7 +21,7 @@ function Skills({ data, css }) {
                     if (logos.length === 0) return null;
                     return allSkillsData.keywords.map(keyword => (
                         <div key={keyword} className={css.skill}>
-                            <Icon name={logos[keyword]} />
+                            <Icon name={logos[keyword]} data={images} />
                             <span>{keyword}</span>
                         </div>
                     ))
