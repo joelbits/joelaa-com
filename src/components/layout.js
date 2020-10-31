@@ -6,8 +6,10 @@ import Menu from './menu'
 import Header from './header'
 import Footer from '../components/footer'
 import './layout.css'
+import styleable from 'react-styleable'
+import globalstyles from '../styles/global.module.sass'
 
-const Layout = ({ children }) => (
+const Layout = ({ children, css }) => (
   <StaticQuery
     query={graphql`
       query SiteInfosQuery {
@@ -52,14 +54,7 @@ const Layout = ({ children }) => (
           siteSections={data.siteSections}
         />
         <Header data={data.me} siteTitle={data.siteInfo.siteMetadata.title} />
-        <div
-          className="contentWrapper"
-          style={{
-            margin: `0 auto`,
-            maxWidth: 960,
-            padding: `0`,
-          }}
-        >
+        <div className={css.contentWrapper}>
           {children}
         </div>
         <Footer data={data.me} />
@@ -72,4 +67,4 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout
+export default styleable(globalstyles)(Layout)

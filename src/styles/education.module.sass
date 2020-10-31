@@ -10,7 +10,7 @@
     justify-content: center
     align-content: center
     padding: 4em 4em
-    @media (max-width: 400px)
+    @media (max-width: 900px)
         padding: 6em 0.5em
     .headerWrapper
         display: flex
@@ -19,22 +19,14 @@
         width: 100%
         padding: 2em 2em
         margin-bottom: 4em
-        @media (max-width: 400px)
-            padding: 2em 0.5em
         h2
             margin: 0
             font-weight: 600
             font-size: 2.5em
-            @media (max-width: 768px)
-                font-size: 1.25em
-            @media (max-width: 400px)
-                font-size: 1.75em
         .educationIcon
             font-size: 2.5em
             display: inline-block
             color: #023e8a
-            @media (max-width: 400px)
-                font-size: 1.75em
     span:nth-child(1)
         display: inline
         &::after
@@ -50,8 +42,6 @@
         font-size: 1em
         font-weight: 600
         margin-bottom: 0.5em
-        @media (max-width: 400px)
-            margin: 0
     .area::after
         content: ', '
     .education
@@ -60,8 +50,7 @@
         padding: 2em
         outline: solid 0.1px darkgray
         box-shadow: 3px 3px 3px hsla(5,5,5,0.3)
-        @media (max-width: 400px)
-            font-size: 0.85em
+        @media (max-width: 900px)
             max-width: 100%
             padding: 2.5em 0.75em
         .dates
@@ -79,10 +68,12 @@
             max-width: 100%
             padding: 0
             li.course
-                text-align: center
+                text-align: left
                 font-size: 0.85em
                 line-height: 1em
                 font-weight: 300
+                margin: 0.5em auto
+                width: 66%
             &:before
                 display: block
                 content: 'Relevant classes:'
