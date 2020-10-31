@@ -6,11 +6,11 @@ const Footer = ({ data }) => {
   const { name, email, github } = data
   return (
     <div className={styles.footer}>
-        <a href={`mailto:${email}`}>
+        <a href={`mailto:${email}`} aria-label="Email address">
             {email}
         </a>
-        <a href={`//github.com/${github}`} className={styles.githubLink} target="_blank" rel="noopener noreferrer" title="View Github profile"><FaGithub className={styles.githubLogo} /></a>
-        <a href={`//github.com/${github}/joelaa-cms`} className={styles.githubProjectLink} target="_blank" rel="noopener noreferrer" title="View site code">View site code</a>
+        <a href={`//github.com/${github}`} className={styles.githubLink} target="_blank" rel="noopener noreferrer" aria-label="View Github profile"><FaGithub className={styles.githubLogo} /></a>
+        <a href={`//github.com/${github}/joelaa-cms`} className={styles.githubProjectLink} target="_blank" rel="noopener noreferrer" aria-label="View site code">View site code</a>
         <p>
           © {new Date().getFullYear()} {name} @ {(typeof window !== 'undefined') && new URL(window.location.href).hostname}
         </p>

@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { FaBars, FaGithub } from 'react-icons/fa'
 import styleable from 'react-styleable'
 import styles from '../styles/menu.module.sass'
 import classNames from 'classnames/bind'
+import Burger from './burger'
 
 let timer
 
@@ -39,10 +39,7 @@ class Menu extends React.Component {
 
   toggleMenu() {
     if (!this.isMobile()) return
-    //const menuElement = document.querySelector('#menuList')
-    //menuElement.style.display = (menuElement.style.display === 'block') ? 'none' : 'block';
     this.setState(prevState => ({ isVisible: !prevState.isVisible }))
-    console.log(this.state.isVisible)
   }
 
   updateWindowDimensions() {
@@ -82,24 +79,26 @@ class Menu extends React.Component {
     return (
       <nav className={className}>
         <div className={css.navBarLogoWrap}>
-          <FaBars id="#menuBars" onClick={this.toggleMenu}/>
+          {this.isMobile() && 
+            <Burger open={isVisible} onClick={this.toggleMenu} onKeyDown={this.toggleMenu}/>    
+          }
           <Link to="/">
             {this.props.children}
             <h1>{siteTitle}</h1>
           </Link>
         </div>
-        <ul className={`${css.menuList} ${isVisible ? "" : "hidden"}`} id="menuList">
+        <ul className={`${isVisible ? css.menuList : css.hidden}`} id="menuList">
           {siteSections.edges.map(edge => {
             const node = edge.node
             if (node.name === 'Blog') return (
-              <li key={node.name} onClick={this.toggleMenu}>
+              <li key={node.name}>
                 <Link to={`/${node.name.toLowerCase()}`} activeClassName={css.activeLink}>
                   {node.name}
                 </Link>
               </li>
             )
             return (
-              <li key={node.name} onClick={this.toggleMenu}>
+              <li key={node.name}>
                 <Link to={`/#${node.name.toLowerCase()}`} activeClassName={css.activeLink}>
                   {node.name}
                 </Link>
@@ -107,10 +106,12 @@ class Menu extends React.Component {
             )
           })
           }
-          <li className={css.socialLinks}>
-            <a href="//github.com/joelbits" className={css.githubLink} target="_blank" rel="noopener noreferrer"
-               title="View Github profile">
-              <FaGithub className={css.githubLogo}/>
+          <li>
+            <a href="//github.com/joelbits" target="_blank" rel="noopener noreferrer"
+               aria-label="View Github profile">
+              <p>
+                Github
+              </p>
             </a>
           </li>
         </ul>
