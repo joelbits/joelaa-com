@@ -7,7 +7,7 @@ import Header from './header'
 import Footer from '../components/footer'
 import './layout.css'
 
-const Layout = ({ children, css }) => (
+const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
       query SiteInfosQuery {

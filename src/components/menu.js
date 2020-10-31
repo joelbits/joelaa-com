@@ -11,16 +11,17 @@ class Menu extends React.Component {
 
   constructor(props) {
     super(props)
+    this.isMobile = this.isMobile.bind(this)
+    this.toggleMenu = this.toggleMenu.bind(this)
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this)
+
     this.state = {
       width:     1980,
       height:    1024,
       wait:      false,
       scrollPos: 0,
-      isVisible: false,
+      isVisible: true
     }
-    this.isMobile = this.isMobile.bind(this)
-    this.toggleMenu = this.toggleMenu.bind(this)
-    this.updateWindowDimensions = this.updateWindowDimensions.bind(this)
   }
 
   isMobile() {
@@ -38,7 +39,10 @@ class Menu extends React.Component {
   }
 
   toggleMenu() {
-    if (!this.isMobile()) return
+    if (!this.isMobile()) {
+      this.setState({ isVisible: true })
+      return
+    }
     this.setState(prevState => ({ isVisible: !prevState.isVisible }))
   }
 
@@ -52,7 +56,11 @@ class Menu extends React.Component {
                       height:    window.innerHeight,
                       scrollPos: window.scrollY,
                       wait:      false,
+                      isVisible: (!this.isMobile()) ? true : this.state.isVisible
                     })
+      if (this.isMobile() && this.state.isVisible) {
+        this.setState({isVisible: false})
+      }
     }, 50)
   }
 
