@@ -16,7 +16,7 @@
     "gatsby-plugin-sharp": "^2.6.43",
     "gatsby-source-contentful": "^2.0.22",
     "gatsby-source-filesystem": "^2.3.35",
-    "gatsby-transformer-remark": "^2.8.46",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.5.19",
     "gh-pages-with-token": "^1.0.0",
     "node-sass": "^4.14.1",
